@@ -1,16 +1,17 @@
 package com.example.jettriviaapp.repository
 
-import android.media.session.MediaSession.QueueItem
+
 import android.util.Log
 import com.example.jettriviaapp.data.DataOrException
+import com.example.jettriviaapp.model.QuestionItem
 import com.example.jettriviaapp.network.QuestionAPI
 import javax.inject.Inject
 
 class QuestionRepository @Inject constructor(private val api: QuestionAPI) {
 
-    private val dataOrException = DataOrException<ArrayList<QueueItem>, Boolean, Exception>()
+    private val dataOrException = DataOrException<ArrayList<QuestionItem>, Boolean, Exception>()
 
-    suspend fun getAllQuestions(): DataOrException<ArrayList<QueueItem>, Boolean, Exception> {
+    suspend fun getAllQuestions(): DataOrException<ArrayList<QuestionItem>, Boolean, Exception> {
         try {
             dataOrException.loading = true
             dataOrException.data = api.getAllQuestions()
