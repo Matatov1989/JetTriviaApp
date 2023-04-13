@@ -1,6 +1,5 @@
 package com.example.jettriviaapp.di
 
-import androidx.compose.ui.unit.Constraints
 import com.example.jettriviaapp.network.QuestionAPI
 import com.example.jettriviaapp.util.Constants
 import dagger.Module
